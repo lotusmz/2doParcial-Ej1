@@ -27,7 +27,8 @@ public class CribaEratostenes {
 		
 		for (int i = 0,j=0; i < pDim; i++){
 			if (pPrimo[i])
-				primos[j++] = 1;
+				primos[j++] = i;
+				
 		}
 		return primos;
 	}
