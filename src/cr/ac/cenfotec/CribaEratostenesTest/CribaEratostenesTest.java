@@ -8,8 +8,18 @@ import cr.ac.cenfotec.CribaEratostenes.CribaEratostenes;
 
 public class CribaEratostenesTest {
 	int dim = 21;
-	boolean[] primos = new boolean[dim];;
+	boolean[] primos = new boolean[dim];
 	
+	@Test
+	public void testLlenarArreglo(){
+
+		primos = CribaEratostenes.llenarArreglo(primos, dim);
+		assertEquals(true, primos[0]);
+		assertEquals(true, primos[5]);
+		assertEquals(true, primos[10]);
+		assertEquals(true, primos[15]);
+		assertEquals(true, primos[20]);
+	}
 	
 	@Test
 	public void testObtenerPrimos() {
@@ -32,5 +42,5 @@ public class CribaEratostenesTest {
 		primos = CribaEratostenes.obtenerListaPrimo(primos, dim);
 		assertEquals(8, CribaEratostenes.obtenerCantidadPrimos(primos, dim));
 	}
-	
+
 }
