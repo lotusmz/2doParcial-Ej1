@@ -18,11 +18,8 @@ public class CribaEratostenes {
 			primo = obtenerListaPrimo(primo, dim);
 			
 			int cuenta = 0;
-			//Cuenta todos los numeros primos obtenidos
-			for (i = 0; i < dim; i++){
-				if (primo[i])
-					cuenta++;
-			}
+			cuenta = obtenerCantidadPrimos(primo, dim);
+			
 			//Se crea un arreglo con la cantidad de #'s primos obtenidos
 			int[] primos = new int[cuenta];
 			
@@ -38,11 +35,21 @@ public class CribaEratostenes {
 		}
 	}
 	
+	public static int obtenerCantidadPrimos(boolean[] pPrimo, int pDim) {
+		int cuenta = 0;
+		//Cuenta todos los numeros primos obtenidos
+		for (int i = 0; i < pDim; i++){
+			if (pPrimo[i])
+				cuenta++;
+		}
+		return cuenta;
+	}
+
 	public static boolean[] obtenerListaPrimo(boolean[] pPrimo, int pDim) {
 		
 		int i,j ;
 		
-		//Se declara los primero dos indices del arreglo se como No Primos
+		//Se declara los primero dos indices del arreglo como No Primos
 		pPrimo[0] = pPrimo[1] = false;
 		
 		//Si i es menor a la raiz cuadrada de dim + 1 se entra en la condición
