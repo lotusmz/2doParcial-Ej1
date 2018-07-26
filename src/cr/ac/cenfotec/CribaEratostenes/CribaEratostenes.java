@@ -10,10 +10,7 @@ public class CribaEratostenes {
 			//Crea un arreglo de booleanos
 			boolean[] primo = new boolean[dim];
 			
-			//Llena el arreglo con valores verdaderos
-			for (i = 0; i < dim; i++){
-				primo[i] = true;
-			}
+			primo = llenarArreglo(primo,dim);
 		
 			primo = obtenerListaPrimo(primo, dim);
 			
@@ -35,6 +32,20 @@ public class CribaEratostenes {
 		}
 	}
 	
+	
+	
+	public static boolean[] llenarArreglo(boolean[] pPrimo, int pDim) {
+
+		//Llena el arreglo con valores verdaderos
+		for (int i = 0; i < pDim; i++){
+			pPrimo[i] = true;
+		}
+		
+		return pPrimo;
+	}
+
+
+
 	public static int obtenerCantidadPrimos(boolean[] pPrimo, int pDim) {
 		int cuenta = 0;
 		//Cuenta todos los numeros primos obtenidos
