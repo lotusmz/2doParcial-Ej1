@@ -23,9 +23,8 @@ public class CribaEratostenesTest {
 	
 	@Test
 	public void testObtenerPrimos() {
-		for (int i = 0; i < dim; i++){
-			primos[i] = true;
-		}		
+		
+		primos = CribaEratostenes.llenarArreglo(primos, dim);	
 			
 		primos = CribaEratostenes.obtenerListaPrimo(primos, dim);
 		assertEquals(false, primos[0]);
@@ -35,12 +34,23 @@ public class CribaEratostenesTest {
 	
 	@Test
 	public void testContadorPrimos(){
-		for (int i = 0; i < dim; i++){
-			primos[i] = true;
-		}			
-		
+		primos = CribaEratostenes.llenarArreglo(primos, dim);		
 		primos = CribaEratostenes.obtenerListaPrimo(primos, dim);
 		assertEquals(8, CribaEratostenes.obtenerCantidadPrimos(primos, dim));
+	}
+	
+	@Test
+	public void testListaPrimos(){
+		int cuenta = 0;			
+		
+		primos = CribaEratostenes.llenarArreglo(primos, dim);
+		primos = CribaEratostenes.obtenerListaPrimo(primos, dim);
+		cuenta = CribaEratostenes.obtenerCantidadPrimos(primos, dim);
+		int[] lPrimos = new int[cuenta];
+		lPrimos = CribaEratostenes.listaDePrimos(primos, dim, cuenta);
+		
+		assertEquals(true, lPrimos[0]);
+		
 	}
 
 }

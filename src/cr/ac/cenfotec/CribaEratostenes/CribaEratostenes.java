@@ -3,7 +3,7 @@ package cr.ac.cenfotec.CribaEratostenes;
 public class CribaEratostenes {
 
 	public static int[] generaCriba(int tope){
-		int i,j ;
+
 		if (tope >= 2){
 
 			int dim = tope+1;
