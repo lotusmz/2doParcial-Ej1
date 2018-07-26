@@ -12,25 +12,24 @@ public class CribaEratostenes {
 			
 			primo = llenarArreglo(primo,dim);
 			primo = obtenerListaPrimo(primo, dim);
-			cuenta = obtenerCantidadPrimos(primo, dim);
-			
-			int[] primos = new int[cuenta];
-			
-			primos = listaDePrimos(primo, dim, primos);
+			cuenta = obtenerCantidadPrimos(primo, dim);		
 						
-			return primos;
+			return listaDePrimos(primo, dim, cuenta);
+			
 		} else {
 			return new int[0];
 		}
 	}		
 	
-	public static int[] listaDePrimos(boolean [] pPrimo, int pDim, int[] pPrimos) {
+	public static int[] listaDePrimos(boolean [] pPrimo, int pDim, int pCuenta) {
+		
+		int[] primos = new int[pCuenta];
 		
 		for (int i = 0,j=0; i < pDim; i++){
 			if (pPrimo[i])
-				pPrimos[j++] = 1;
+				primos[j++] = 1;
 		}
-		return pPrimos;
+		return primos;
 	}
 
 	public static boolean[] llenarArreglo(boolean[] pPrimo, int pDim) {
